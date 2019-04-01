@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration
 @ConfigurationProperties("redis")
 class RedisProperty {
 
-    var host = ""
+    var hostname = ""
     var port = 0
     var jedis = JedisProperty()
 }
