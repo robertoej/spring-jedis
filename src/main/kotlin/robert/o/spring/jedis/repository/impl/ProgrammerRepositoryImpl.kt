@@ -4,11 +4,12 @@ import org.springframework.data.redis.core.ValueOperations
 import org.springframework.stereotype.Repository
 import robert.o.spring.jedis.model.Programmer
 import robert.o.spring.jedis.repository.ProgrammerRepository
+import java.util.concurrent.TimeUnit
 
 @Repository
 class ProgrammerRepositoryImpl(private val valueOps: ValueOperations<String, Programmer>): ProgrammerRepository {
 
     override fun getProgrammer(id: String) = valueOps.get(id)
 
-    override fun setProgrammer(programmer: Programmer) = valueOps.set(programmer.id, programmer)
+    override fun setProgrammer(programmer: Programmer) = valueOps.set(programmer.id, programmer, 10, TimeUnit.SECONDS)
 }

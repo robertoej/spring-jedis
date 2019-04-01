@@ -14,7 +14,7 @@ class ProgrammersController(private val programmerListService: ProgrammerListSer
     @GetMapping
     fun list() = programmerListService.listProgrammers()
 
-    @GetMapping
+    @GetMapping("size")
     fun size() = programmerListService.size()
 
     @PutMapping
