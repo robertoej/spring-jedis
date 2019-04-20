@@ -7,7 +7,6 @@
     <profiles>
         <profile>
             <id>local</id>
-            <!--Enable snapshots for the built in central repo to direct all requests to nexus via the mirror -->
             <repositories>
                 <repository>
                     <id>central</id>
